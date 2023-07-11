@@ -1,5 +1,5 @@
 class Item
-  attr_accessor :genre, :author, :label, :published_date, :archived
+  attr_accessor :id, :genre, :author, :label, :published_date, :archived
 
   def initialize(published_date, archived: false)
     @id = Random.rand(1..1000)

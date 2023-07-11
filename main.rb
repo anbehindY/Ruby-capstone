@@ -1,5 +1,19 @@
 require_relative 'app'
 
+def list_options
+  puts "\nPlease choose an option by entering a number"
+  puts "\n1 - List all books"
+  puts '2 - List all music albums'
+  puts '3 - List of games'
+  puts '4 - List all genres'
+  puts '5 - List all labels'
+  puts '6 - List all authors'
+  puts '8 - Add a book'
+  puts '9 - Add a music album'
+  puts '10 - Add a game'
+  puts '11 - Exit'
+end
+
 def your_option(app, option)
   case option
   when '1'
@@ -14,21 +28,12 @@ def start_app(message)
   puts message
 
   loop do
-    puts "\nPlease choose an option by entering a number"
-    puts "\n1 - List all books"
-    puts '2 - List all music albums'
-    puts '3 - List of games'
-    puts '4 - List all genres'
-    puts '5 - List all labels'
-    puts '6 - List all authors'
-    puts '8 - Add a book'
-    puts '9 - Add a music album'
-    puts '10 - Add a game'
-    puts '11 - Exit'
-
+    list_options
     order = gets.chomp
-    break if order == '11'
-
+    if order == '11'
+      app.save_data
+      break
+    end
     your_option(app, order)
   end
 end
