@@ -1,12 +1,20 @@
-def youroption(option)
-  puts option
+require_relative 'app'
+
+def your_option(app, option)
+  case option
+  when '1'
+    app.list_books
+  when '8'
+    app.add_book
+  end
 end
 
-def startapp(message)
+def start_app(message)
+  app = App.new
   puts message
 
   loop do
-    puts "\nPlease choose an options by entering a number"
+    puts "\nPlease choose an option by entering a number"
     puts "\n1 - List all books"
     puts '2 - List all music albums'
     puts '3 - List of games'
@@ -21,8 +29,8 @@ def startapp(message)
     order = gets.chomp
     break if order == '11'
 
-    youroption(order)
+    your_option(app, order)
   end
 end
 
-startapp('We come to Catelog of my things')
+start_app('Welcome to Catalog of my things')
