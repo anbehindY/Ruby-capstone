@@ -9,7 +9,7 @@ require "json"
 class App
   include BookModule
   include LabelModule
-  include GameModuleModule
+  include GameModule
   include AuthorModule
   include SaveModule
   include LoadModule
@@ -19,10 +19,5 @@ class App
     @labels = load_labels
     @games = load_games
     @authors = load_authors
-  end
-
-  def save_data
-    save_books
-    save_labels
   end
 end

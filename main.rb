@@ -7,12 +7,11 @@ def your_option(option)
   when "2"
     puts "list_musicalbums"
   when "3"
-    puts "list_games"
     APP.list_games
   when "4"
     puts "list_genres"
   when "5"
-    puts "list_labels"
+    APP.list_labels
   when "6"
     APP.list_authors
   when "7"

@@ -9,13 +9,15 @@ module GameModule
     last_played_at = gets.chomp
     print "Enter is multiplayer?:[Y/N]"
     multiplayer = gets.chomp
-    @games << game.new(last_played_at, multiplayer, publish_date, archived: false)
+    @games << Game.new(last_played_at, multiplayer, publish_date, archived: false)
+    save_games
     print "Enter  Author First Name: "
     first_name = gets.chomp
     print "Enter Author First Name: "
     last_name = gets.chomp
-    @authors << author.new(first_name, last_name)
+    @authors << Author.new(first_name, last_name)
     puts "Game added successfully with author"
+    save_authors
   end
 
   def list_games
@@ -26,7 +28,7 @@ module GameModule
     end
     @games.each_with_index do |game, index|
       print "\n #{index + 1}) Game published Date: #{game.publish_date} "
-      print "Game last played Date : #{game.published_date} ,"
+      print "Game last played Date : #{game.last_played_at}, "
       print "Game is multiplayer :#{game.multiplayer}"
     end
   end
