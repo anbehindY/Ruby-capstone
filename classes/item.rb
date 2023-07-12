@@ -1,5 +1,5 @@
 class Item
-  attr_accessor :id, :genre, :author, :label, :published_date, :archived
+  attr_accessor :id, :genre, :author, :published_date, :archived
 
   def initialize(published_date, archived: false)
     @id = Random.rand(1..1000)
@@ -9,6 +9,11 @@ class Item
 
   def move_to_archived
     @archived = true if can_be_archive?
+  end
+
+  def label=(label)
+    @label = label
+    label.add_item(self)
   end
 
   private
