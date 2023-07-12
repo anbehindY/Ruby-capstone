@@ -7,4 +7,12 @@ module SaveModule
     end
     File.write('data/books.json', JSON.pretty_generate(saved_books))
   end
+
+  def save_labels
+    saved_labels = []
+    @labels.each do |label|
+      saved_labels << { title: label.title, color: label.color }
+    end
+    File.write('data/labels.json', JSON.pretty_generate(saved_labels))
+  end
 end

@@ -1,4 +1,5 @@
 require_relative 'modules/book_module'
+require_relative 'modules/label_module'
 require_relative 'modules/save_module'
 require_relative 'modules/load_module'
 require 'json'
@@ -16,5 +17,6 @@ class App
 
   def save_data
     save_books
+    save_labels
   end
 end

@@ -18,6 +18,8 @@ def your_option(app, option)
   case option
   when '1'
     app.list_books
+  when '5'
+    app.list_labels
   when '8'
     app.add_book
   end
