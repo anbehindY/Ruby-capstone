@@ -1,5 +1,12 @@
+require_relative("classes/item")
+require_relative("classes/book")
+require_relative("classes/author")
+require_relative("classes/game")
+require_relative("classes/label")
+require_relative("classes/genre")
+require_relative("classes/MusicAlbum")
 require_relative("app")
-require_relative("userinput")
+require_relative("logic/userinput")
 
 def youroption(option)
   case option
@@ -43,8 +50,14 @@ def startapp(message)
     puts "9 - Add a game"
     puts "10 - Exit"
     order = gets.chomp
-    youroption(order)
+    if (("1".."10").include? order)
+      youroption(order)
+    else
+      puts "\nInvalid input. please try again!"
+    end
   end
 end
 
-startapp("We come to Catelog of my things")
+APP = App.new
+
+startapp("\nWe Come To Catelog of Things\n")
