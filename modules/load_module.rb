@@ -24,4 +24,23 @@ module LoadModule
     end
     loaded_labels
   end
+
+  def load_games
+    games = JSON.parse(fetch_data('games'))
+    loaded_games = []
+    games.each do |game|
+      loaded_games << Game.new(game['last_played_at'], game['multiplayer'], game['publish_date'])
+    end
+    loaded_games
+  end
+
+  def load_authors
+    authors = JSON.parse(fetch_data('authors'))
+    loaded_authors = []
+    authors.each do |author|
+      loaded_authors << author.new(author['first_name'], author['last_name'])
+    end
+    loaded_authors
+  end
+
 end

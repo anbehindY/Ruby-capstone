@@ -3,25 +3,31 @@ require_relative "../classes/author"
 
 module GameModule
   def add_game
-    print "Publisher: "
-    publisher = gets.chomp
-    print "cover_state: "
-    cover_state = gets.chomp
-    print "published_date: "
-    published_date = gets.chomp
-    @books << Book.new(published_date, publisher, cover_state, archived: false)
-    print "Label: "
-    title = gets.chomp
-    print "Color: "
-    color = gets.chomp
-    @labels << Label.new(title, color)
-    puts "Book added successfully with labels"
+    print "Enter  game publish date: "
+    publish_date = gets.chomp
+    print "Enter game Last played Date: "
+    last_played_at = gets.chomp
+    print "Enter is multiplayer?:[Y/N]"
+    multiplayer = gets.chomp
+    @games << game.new(last_played_at, multiplayer, publish_date, archived: false)
+    print "Enter  Author First Name: "
+    first_name = gets.chomp
+    print "Enter Author First Name: "
+    last_name = gets.chomp
+    @authors << author.new(first_name, last_name)
+    puts "Game added successfully with author"
   end
 
   def list_games
-    puts "No books found" if @books.empty?
-    @books.each_with_index do |book, index|
-      puts "#{index + 1})Book published by #{book.publisher} in #{book.published_date} with #{book.cover_state} cover"
+    if @games.empty?
+      puts "No game found"
+    else
+      puts "List of Games"
+    end
+    @games.each_with_index do |game, index|
+      print "\n #{index + 1}) Game published Date: #{game.publish_date} "
+      print "Game last played Date : #{game.published_date} ,"
+      print "Game is multiplayer :#{game.multiplayer}"
     end
   end
 end
