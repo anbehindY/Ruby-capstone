@@ -1,6 +1,10 @@
 require_relative 'app'
 
 def your_option(option)
+  if option == '10'
+    puts 'Thanks for using our Application!'
+    exit
+  end
   menu_options = {
     '1' => APP.list_books,
     '3' => APP.list_games,
