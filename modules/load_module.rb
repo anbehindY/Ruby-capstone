@@ -15,4 +15,13 @@ module LoadModule
     end
     loaded_books
   end
+
+  def load_labels
+    labels = JSON.parse(fetch_data('labels'))
+    loaded_labels = []
+    labels.each do |label|
+      loaded_labels << Label.new(label['title'], label['color'])
+    end
+    loaded_labels
+  end
 end

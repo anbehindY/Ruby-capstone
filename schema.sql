@@ -13,3 +13,9 @@ CREATE TABLE Books (
   FOREIGN KEY (author_id) REFERENCES Authors(id),
   FOREIGN KEY (label_id) REFERENCES Labels(id)
 )
+
+CREATE TABLE Labels (
+  id GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  title VARCHAR(30) NOT NULL,
+  color VARCHAR(20)
+)

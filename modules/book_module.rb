@@ -1,4 +1,5 @@
 require_relative '../classes/book'
+require_relative '../classes/label'
 
 module BookModule
   def add_book
@@ -9,7 +10,12 @@ module BookModule
     print 'published_date: '
     published_date = gets.chomp
     @books << Book.new(published_date, publisher, cover_state, archived: false)
-    puts 'Book added successfully'
+    print 'Label: '
+    title = gets.chomp
+    print 'Color: '
+    color = gets.chomp
+    @labels << Label.new(title, color)
+    puts 'Book added successfully with labels'
   end
 
   def list_books
