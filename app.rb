@@ -1,5 +1,5 @@
 class App
-  attr_accessor :books, :authors, :games, :genres, :labels, :musicalbums
+  attr_reader :books, :authors, :games, :genres, :labels, :musicalbums
 
   def initialize
     @books = []
@@ -52,8 +52,4 @@ def setanyinput(message)
     end
   end
   return input
-end
-
-def add_author
-  return { "first_name" => first_name, "last_name" => last_name }
 end

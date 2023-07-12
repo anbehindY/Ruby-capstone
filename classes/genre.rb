@@ -1,8 +1,7 @@
 require_relative "item"
 
-class Genre 
-  attr_reader :name
-  attr_accessor :items
+class Genre
+  attr_reader :name, :items
 
   def initialize(name)
     @id = Random.rand(1..1000)
@@ -10,8 +9,16 @@ class Genre
     @items = []
   end
 
+  def getid
+    @id
+  end
+
+  def setid
+    @id
+  end
+
   def add_item(item)
     @items << item unless @items.include?(item)
-    item.add_genre(self)
+    item.genre = self
   end
 end
