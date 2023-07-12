@@ -17,27 +17,25 @@ def your_option(option)
 end
 
 def getlist
-  {
-    '1' => '- List all books',
-    '2' => '- List all music albums',
-    '3' => '- List of games',
-    '4' => '- List all genres',
-    '5' => '- List all labels',
-    '6' => '- List all authors',
-    '7' => '- Add a book',
-    '8' => '- Add a music album',
-    '9' => '- Add a game',
-    '10' => '- Exit'
-  }
+  puts "\nPlease choose an options by entering a number"
+  puts "\n1 - List all books"
+  puts '2 - List all music albums'
+  puts '3 - List of games'
+  puts '4 - List all genres'
+  puts '5 - List all labels'
+  puts '6 - List all authors'
+  puts '7 - Add a book'
+  puts '8 - Add a music album'
+  puts '9 - Add a game'
+  puts '10 - Exit'
 end
 
 def start_app(message)
   puts message
-  lists = getlist
   order = '10'
   loop do
     puts "\nPlease choose an options by entering a number\n"
-    lists.each { |key, value| puts "#{key} #{value}" }
+    getlist
     order = gets.chomp
     if ('1'..'10').include? order
       your_option(order)
