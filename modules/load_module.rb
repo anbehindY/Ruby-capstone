@@ -8,37 +8,37 @@ module LoadModule
   end
 
   def load_books
-    books = JSON.parse(fetch_data("books"))
+    books = JSON.parse(fetch_data('books'))
     loaded_books = []
     books.each do |book|
-      loaded_books << Book.new(book["publish_date"], book["publisher"], book["cover_state"])
+      loaded_books << Book.new(book['publish_date'], book['publisher'], book['cover_state'])
     end
     loaded_books
   end
 
   def load_labels
-    labels = JSON.parse(fetch_data("labels"))
+    labels = JSON.parse(fetch_data('labels'))
     loaded_labels = []
     labels.each do |label|
-      loaded_labels << Label.new(label["title"], label["color"])
+      loaded_labels << Label.new(label['title'], label['color'])
     end
     loaded_labels
   end
 
   def load_games
-    games = JSON.parse(fetch_data("games"))
+    games = JSON.parse(fetch_data('games'))
     loaded_games = []
     games.each do |game|
-      loaded_games << Game.new(game["last_played_at"], game["multiplayer"], game["publish_date"])
+      loaded_games << Game.new(game['last_played_at'], game['multiplayer'], game['publish_date'])
     end
     loaded_games
   end
 
   def load_authors
-    authors = JSON.parse(fetch_data("authors"))
+    authors = JSON.parse(fetch_data('authors'))
     loaded_authors = []
     authors.each do |author|
-      loaded_authors << Author.new(author["first_name"], author["last_name"])
+      loaded_authors << Author.new(author['first_name'], author['last_name'])
     end
     loaded_authors
   end

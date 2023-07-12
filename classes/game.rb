@@ -1,4 +1,4 @@
-require_relative "item"
+require_relative 'item'
 
 class Game < Item
   attr_reader :multiplayer, :last_played_at
@@ -13,6 +13,7 @@ class Game < Item
 
   def can_be_archive?
     return true if super && (@last_played_at > 2.years.ago)
+
     false
   end
 end
