@@ -3,6 +3,7 @@ require_relative 'modules/label_module'
 require_relative 'modules/save_module'
 require_relative 'modules/load_module'
 require_relative 'modules/music_module'
+require_relative 'modules/genre_module'
 require 'json'
 
 class App
@@ -11,6 +12,7 @@ class App
   include SaveModule
   include LoadModule
   include MusicModule
+  include GenreModule
 
   def initialize
     @books = load_books

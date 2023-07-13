@@ -5,7 +5,7 @@ class MusicAlbum < Item
   attr_accessor :on_spotify
 
   @music_albums = []
-  def initialize(on_spotify:, **attributes)
+  def initialize(on_spotify:, published_date)
     super(attributes)
     @on_spotify = on_spotify
     self.class.all << self
