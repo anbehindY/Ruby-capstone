@@ -1,19 +1,24 @@
 require_relative 'app'
 
 def your_option(option)
-  if option == '10'
+  menu_options = {
+    '1' => -> { APP.list_books },
+    '2' => -> { puts 'here1' },
+    '3' => -> { APP.list_games },
+    '4' => -> { puts 'here3' },
+    '5' => -> { APP.list_labels },
+    '6' => -> { APP.list_authors },
+    '7' => -> { APP.add_book },
+    '8' => -> { puts 'here9' },
+    '9' => -> { APP.add_game }
+  }
+
+  if menu_options.key?(option)
+    menu_options[option].call
+  else
     puts 'Thanks for using our Application!'
     exit
   end
-  menu_options = {
-    '1' => APP.list_books,
-    '3' => APP.list_games,
-    '5' => APP.list_labels,
-    '7' => APP.add_book,
-    '6' => APP.list_authors,
-    '9' => APP.add_game
-  }
-  menu_options[option] if menu_options.key?(option)
 end
 
 def getlist
@@ -34,7 +39,6 @@ def start_app(message)
   puts message
   order = '10'
   loop do
-    puts "\nPlease choose an options by entering a number\n"
     getlist
     order = gets.chomp
     if ('1'..'10').include? order

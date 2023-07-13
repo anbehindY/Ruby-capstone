@@ -13,7 +13,7 @@ module GameModule
     save_games
     print 'Enter  Author First Name: '
     first_name = gets.chomp
-    print 'Enter Author First Name: '
+    print 'Enter Author Last Name: '
     last_name = gets.chomp
     @authors << Author.new(first_name, last_name)
     puts 'Game added successfully with author'
