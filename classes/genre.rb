@@ -1,4 +1,4 @@
-equire './item'
+require_relative 'item'
 
 # Genre class
 class Genre

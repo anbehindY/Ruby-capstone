@@ -18,8 +18,14 @@ def your_option(app, option)
   case option
   when '1'
     app.list_books
+  when '2'
+    app.list_all_albums
+  when '4'
+    app.list_all_genres
   when '8'
     app.add_book
+  when '9'
+    app.add_an_album
   end
 end
 

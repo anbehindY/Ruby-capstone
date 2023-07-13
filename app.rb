@@ -12,6 +12,7 @@ class App
 
   def initialize
     @books = load_books
+    @album = load_album
   end
 
   def save_data

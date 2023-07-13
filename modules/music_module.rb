@@ -1,4 +1,6 @@
 require_relative '../classes/musicAlbum'
+require_relative '../classes/genre'
+require 'date'
 
 module MusicModule
     def take_album_details
@@ -63,4 +65,17 @@ module MusicModule
         end
         end
     end
+
+    def item_property_selection
+        create_genre
+    end
+
+    def create_genre
+        puts # blank
+        puts 'Please create a Genre with the details below: '
+        print 'Genre name: '
+        genre_name = gets.chomp
+        @create_genre = Genre.new(genre_name)
+        puts 'Genre added successfully!'
+      end
 end
