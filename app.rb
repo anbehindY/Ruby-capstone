@@ -1,5 +1,7 @@
 require_relative 'modules/book_module'
 require_relative 'modules/label_module'
+require_relative 'modules/game_module'
+require_relative 'modules/author_module'
 require_relative 'modules/save_module'
 require_relative 'modules/load_module'
 require_relative 'modules/music_module'
@@ -18,12 +20,7 @@ class App
     @books = load_books
     @labels = load_labels
     @album = load_album
-  end
-
-  def save_data
-    save_books
-    save_labels
-    album_saves
-    save_genres
+    @games = load_games
+    @authors = load_authors
   end
 end

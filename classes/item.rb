@@ -14,6 +14,6 @@ class Item
   private
 
   def can_be_archive?
-    publish_date > 10.years.ago
+    @publish_date > 10.years.ago
   end
 end

@@ -24,48 +24,47 @@ module LoadModule
     end
     loaded_labels
   end
-end
 
-def load_album
-  return unless File.exist?('data/albums.json') && !File.empty?('data/albums.json')
-
-  @album_data = JSON.parse(File.read('data/albums.json'))
-
-  album_file_load
-end
-
-def album_file_load
-  albums = @album_data.map do |album|
-    genre = GenreConverter.new(album['genre']['id'], album['genre']['name'])
-    author = AuthorConverter.new(album['author']['id'], album['author']['first_name'], album['author']['last_name'])
-    label = LabelConverter.new(album['label']['id'], album['label']['title'], album['label']['colour'])
-    publish_date = Date.parse(album['publish_date'])
-
-    MusicAlbumConverter.new(id: album['id'], on_spotify: album['on_spotify'], genre: genre, author: author,
-                            source: album['source'], label: label, publish_date: publish_date)
+  def load_games
+    games = JSON.parse(fetch_data('games'))
+    loaded_games = []
+    games.each do |game|
+      loaded_games << Game.new(game['last_played_at'], game['multiplayer'], game['publish_date'])
+    end
+    loaded_games
   end
 
-  MusicAlbum.all = albums
-end
+  def load_authors
+    authors = JSON.parse(fetch_data('authors'))
+    loaded_authors = []
+    authors.each do |author|
+      loaded_authors << Author.new(author['first_name'], author['last_name'])
+    end
+    loaded_authors
+  end
 
-def load_album
-  return unless File.exist?('data/albums.json') && !File.empty?('data/albums.json')
+  def load_album
+    return unless File.exist?('data/albums.json') && !File.empty?('data/albums.json')
+    @album_data = JSON.parse(File.read('data/albums.json'))
+    album_file_load
+  end
+  
+  def album_file_load
+    albums = @album_data.map do |album|
+      genre = GenreConverter.new(album['genre']['id'], album['genre']['name'])
+      author = AuthorConverter.new(album['author']['id'], album['author']['first_name'], album['author']['last_name'])
+      label = LabelConverter.new(album['label']['id'], album['label']['title'], album['label']['colour'])
+      publish_date = Date.parse(album['publish_date'])
+  
+      MusicAlbumConverter.new(id: album['id'], on_spotify: album['on_spotify'], genre: genre, author: author,
+                              source: album['source'], label: label, publish_date: publish_date)
+    end
+    albums
+  end
 
-  @album_data = JSON.parse(File.read('data/albums.json'))
-
-  album_file_load
-end
-
-# def album_file_load
-#   albums = @album_data.map do |album|
-#     genre = GenreConverter.new(album['genre']['id'], album['genre']['name'])
-#     author = AuthorConverter.new(album['author']['id'], album['author']['first_name'], album['author']['last_name'])
-#     label = LabelConverter.new(album['label']['id'], album['label']['title'], album['label']['colour'])
-#     publish_date = Date.parse(album['publish_date'])
-
-#     MusicAlbumConverter.new(id: album['id'], on_spotify: album['on_spotify'], genre: genre, author: author,
-#                             source: album['source'], label: label, publish_date: publish_date)
-#   end
-
-#   MusicAlbum.all = albums
+  def load_album
+    return unless File.exist?('data/albums.json') && !File.empty?('data/albums.json')
+    @album_data = JSON.parse(File.read('data/albums.json'))
+    album_file_load
+  end
 end
