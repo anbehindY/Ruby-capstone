@@ -2,23 +2,29 @@ require_relative "app"
 
 def your_option(option)
   case option
-  when '1'
-    app.list_books
-  when '2'
-    app.list_all_albums
-  when '4'
-    app.list_all_genres
+  when "1"
+    APP.list_books
+  when "2"
+    APP.list_all_albums
+  when "3"
+    puts "list_games"
+  when "4"
+    APP.list_all_genres
+  when "5"
+    puts "list_labels"
+  when "6"
+    puts "list_author"
   when "7"
     APP.add_book
-  when '8'
-    app.add_book
-  when '9'
-    app.add_an_album
+  when "8"
+    # puts "Thanks for using our Application!"
+    APP.add_an_album
+  when "9"
+    puts "add_game"
   when "10"
     puts "Thanks for using our Application!"
     exit
   end
-
 end
 
 def start_app(message)

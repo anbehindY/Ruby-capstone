@@ -24,5 +24,6 @@ class App
     save_books
     save_labels
     album_saves
+    save_genres
   end
 end

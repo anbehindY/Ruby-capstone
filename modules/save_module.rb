@@ -15,16 +15,33 @@ module SaveModule
     end
     File.write('data/labels.json', JSON.pretty_generate(saved_labels))
   end
-end
 
-def album_saves
-  albums = MusicAlbum.all
-  File.write('data/albums.json', JSON.dump(albums.map do |album|
-                                        { id: album.id, on_spotify: album.on_spotify,
-                                          genre: { id: album.genre.id, name: album.genre.name },
-                                          author: { id: album.author.id, first_name: album.author.first_name,
-                                                    last_name: album.author.last_name }, source: album.source, label:
-                                         { id: album.label.id, title: album.label.title, colour: album.label.colour },
-                                          publish_date: album.publish_date.to_s }
-                                      end))
+  def save_genres
+    saved_genres = []
+    @genres.each do |genre|
+      saved_genres << { name: genre.name }
+    end
+    File.write('data/genres.json', JSON.pretty_generate(saved_labels))
+  end
+
+  def save_genres
+    saved_genres = []
+    @genres.each do |genre|
+      saved_genres << { name: genre.name }
+    end
+    File.write('data/genres.json', JSON.pretty_generate(saved_labels))
+  end
+
+
+  # def album_saves
+  #   albums = MusicAlbum.all
+  #   File.write('data/albums.json', JSON.dump(albums.map do |album|
+  #                                         { id: album.id, on_spotify: album.on_spotify,
+  #                                           genre: { id: album.genre.id, name: album.genre.name },
+  #                                           author: { id: album.author.id, first_name: album.author.first_name,
+  #                                                     last_name: album.author.last_name }, source: album.source, label:
+  #                                         { id: album.label.id, title: album.label.title, colour: album.label.colour },
+  #                                           publish_date: album.publish_date.to_s }
+  #                                       end))
+  # end
 end

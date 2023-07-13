@@ -4,14 +4,14 @@ require 'date'
 
 module MusicModule
     def take_album_details
-        puts 'Please add a Music Album with details below: '
-        item_property_selection
-        print 'Music Album Source: '
-        @m_source = gets.chomp
+        # puts 'Please add a Music Album with details below: '
+        # item_property_selection
+        # print 'Music Album Source: '
+        # @m_source = gets.chomp
         print 'Is the Music Album on Spotify? (Y/N): '
-        validate_boolean
+        on_spotify = gets.chomp
         print 'Publish date(YYYY-MM-DD): '
-        validate_date
+        publish_date = gets.chomp
     end
 
     def list_all_albums
@@ -29,8 +29,7 @@ module MusicModule
 
     def add_an_album
         take_album_details
-        MusicAlbum.new(on_spotify: @onspot, genre: @created_genre, author: @created_author,
-                    source: @m_source, label: @created_label, publish_date: @p_date)
+        MusicAlbum.new(on_spotify, publish_date)
         puts 'Music Album added sucessfully!'
     end
 
