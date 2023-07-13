@@ -11,7 +11,7 @@ module LoadModule
     books = JSON.parse(fetch_data('books'))
     loaded_books = []
     books.each do |book|
-      loaded_books << Book.new(book['published_date'], book['publisher'], book['cover_state'])
+      loaded_books << Book.new(book['publish_date'], book['publisher'], book['cover_state'])
     end
     loaded_books
   end
@@ -23,5 +23,23 @@ module LoadModule
       loaded_labels << Label.new(label['title'], label['color'])
     end
     loaded_labels
+  end
+
+  def load_games
+    games = JSON.parse(fetch_data('games'))
+    loaded_games = []
+    games.each do |game|
+      loaded_games << Game.new(game['last_played_at'], game['multiplayer'], game['publish_date'])
+    end
+    loaded_games
+  end
+
+  def load_authors
+    authors = JSON.parse(fetch_data('authors'))
+    loaded_authors = []
+    authors.each do |author|
+      loaded_authors << Author.new(author['first_name'], author['last_name'])
+    end
+    loaded_authors
   end
 end
