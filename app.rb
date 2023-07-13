@@ -15,6 +15,7 @@ class App
   def initialize
     @books = load_books
     @labels = load_labels
+    @album = load_album
   end
 
   def save_data

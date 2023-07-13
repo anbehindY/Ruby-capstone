@@ -23,6 +23,16 @@ def your_option(option)
   when "10"
     puts "Thanks for using our Application!"
     exit
+  when '1'
+    app.list_books
+  when '2'
+    app.list_all_albums
+  when '4'
+    app.list_all_genres
+  when '8'
+    app.add_book
+  when '9'
+    app.add_an_album
   end
 end
 
