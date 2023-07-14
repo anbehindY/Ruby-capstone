@@ -19,6 +19,7 @@
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
+- [🙏 Acknowledgements](#acknowledgements)
 - [📝 License](#license)
 
 <!-- PROJECT DESCRIPTION -->
@@ -122,13 +123,13 @@ Example command:
 - Twitter: [@yanminthwin](https://twitter.com/yanminthwin)
 - LinkedIn: [Yan Min Thwin](https://www.linkedin.com/in/yan-min-thwin/)
 
-  👤 **Osman Wako**
+👤 **Osman Wako**
 
 - GitHub: [@osmanwako](https://github.com/osmanwako)
 - Twitter: [@osmanWakow](https://twitter.com/osmanwakow)
 - LinkedIn :[@osmanWako](https://www.linkedin.com/in/osmanwako/)
 
- 👤**Daniel Kigozi**
+👤**Daniel Kigozi**
 
 - GitHub: [Daniel-Kigozi](https://github.com/Daniel-Kigozi)
 - Twitter: [@DanielKigozi15](https://twitter.com/@DanielKigozi15)
@@ -152,7 +153,7 @@ Example command:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page]([../../issues/](https://github.com/anbehindY/Ruby-capstone/issues)).
+Feel free to check the [issues page](https://github.com/anbehindY/Ruby-capstone/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -160,9 +161,13 @@ Feel free to check the [issues page]([../../issues/](https://github.com/anbehind
 
 ## ⭐️ Show your support <a name="support"></a>
 
-> Write a message to encourage readers to support your project
-
 If you like this project kindly give it a star.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+I would like to thank [Microverse](https://www.microverse.org/) for giving this opportunity to learn.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -170,6 +175,6 @@ If you like this project kindly give it a star.
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./MIT.md) licensed.
+This project is [MIT](./LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
