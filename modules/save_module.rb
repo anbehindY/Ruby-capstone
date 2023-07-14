@@ -37,4 +37,20 @@ module SaveModule
     end
     save_file('authors', authors_data)
   end
+
+  def save_musics
+    music_data = []
+    @musicalbums.each do |musicalbum|
+      music_data << { publish_date: musicalbum.publish_date, on_spotify: musicalbum.on_spotify }
+    end
+    save_file('musicalbums', music_data)
+  end
+
+  def save_genres
+    genres_data = []
+    @genres.each do |genre|
+      genres_data << { name: genre.name }
+    end
+    save_file('genres', genres_data)
+  end
 end

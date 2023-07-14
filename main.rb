@@ -3,13 +3,13 @@ require_relative 'app'
 def your_option(option)
   menu_options = {
     '1' => -> { APP.list_books },
-    '2' => -> { puts 'here1' },
+    '2' => -> { APP.list_musics },
     '3' => -> { APP.list_games },
-    '4' => -> { puts 'here3' },
+    '4' => -> { APP.list_genres },
     '5' => -> { APP.list_labels },
     '6' => -> { APP.list_authors },
     '7' => -> { APP.add_book },
-    '8' => -> { puts 'here9' },
+    '8' => -> { APP.add_music },
     '9' => -> { APP.add_game }
   }
 
