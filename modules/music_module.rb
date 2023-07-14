@@ -1,56 +1,32 @@
-require_relative '../classes/musicAlbum'
-require_relative '../classes/genre'
-require 'date'
+require_relative "../classes/musicalbum"
+require_relative "../classes/genre"
+require "date"
 
 module MusicModule
-    def take_album_details
-        puts 'Please add a Music Album with details below: '
-        item_property_selection
-        print 'Is the Music Album on Spotify? (Y/N): '
-        on_spotify = validate_boolean
-        print 'Publish date(YYYY-MM-DD): '
-        publish_date = validate_date
-    end
+  def add_music
+    #(publish_date, )
+    print "Enter Music Album publish date: "
+    publish_date = gets.chomp
+    print "Enter [y/n] Is it on spotify: "
+    on_spotify = gets.chomp
+    @musicalbums << MusicAlbum.new(publish_date, on_spotify, archived: false)
+    save_musics
+    print "Enter Genre Author Name: "
+    name = gets.chomp
+    @genres << Genre.new(name)
+    puts "Music Album added successfully with genre"
+    save_genres
+  end
 
-    def list_all_albums
-        albums = MusicAlbum.all
-        if albums.empty?
-        puts 'There are no Music Albums added'
-        else
-        puts 'These are all the Music Albums'
-        albums.each_with_index do |album, index|
-            puts "#{index + 1}. Album ID:#{album.id} by #{album.author.first_name} #{album.author.last_name},
-            On Spotify? #{album.on_spotify}"
-        end
-        end
+  def list_musics
+    if @musicalbums.empty?
+      puts "No Music Album found"
+    else
+      puts "List of Music Album"
     end
-
-    def add_an_album
-        take_album_details
-        @album << MusicAlbum.new(publish_date: publish_date, on_spotify: on_spotify)
-        puts 'Music Album added sucessfully!'
+    @musicalbums.each_with_index do |musicalbum, index|
+      print "\n #{index + 1}) Game published Date: #{musicalbum.publish_date}, "
+      print "It is on spotify :#{musicalbum.on_spotify}"
     end
-
-    def validate_date
-        @p_date = gets.chomp
-        # begin
-        # Date.parse(@p_date)
-        # rescue Date::Error
-        # puts 'Invalid date format. Please enter the date in the format YYYY-MM-DD.'
-        # nil
-        # end
-    end
-    
-    def validate_boolean
-        bool = gets.chomp.upcase
-        if bool == 'Y'
-            @onspot = true 
-        else
-            @onspot = false
-        end
-    end
-
-    def item_property_selection
-        create_genre
-    end
+  end
 end
