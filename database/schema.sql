@@ -67,3 +67,4 @@ CREATE TABLE
     PRIMARY KEY (id),
     FOREIGN KEY (author_id) REFERENCES authors(id)
   );
+  
