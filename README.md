@@ -49,7 +49,7 @@ The app help you to keep recods about any items you own, thing like
 
 In this recorded video, we describe how we built this amazing project as a team.
 
-[Link to watch the video]()
+[Project presentation video](https://drive.google.com/file/d/1G5wzKzUCcXMvgMBkqsKY5xbX5VSqiBtm/view?usp=sharing)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
