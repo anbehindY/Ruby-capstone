@@ -122,6 +122,12 @@ Example command:
 - Twitter: [@yanminthwin](https://twitter.com/yanminthwin)
 - LinkedIn: [Yan Min Thwin](https://www.linkedin.com/in/yan-min-thwin/)
 
+  👤 **Osman Wako**
+
+- GitHub: [@osmanwako](https://github.com/osmanwako)
+- Twitter: [@osmanWakow](https://twitter.com/osmanwakow)
+- LinkedIn :[@osmanWako](https://www.linkedin.com/in/osmanwako/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
