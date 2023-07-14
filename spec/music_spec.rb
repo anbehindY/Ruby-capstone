@@ -1,4 +1,4 @@
-require_relative '../classes/musicalbum'
+require_relative '../classes/music_album'
 
 describe 'Testing MusicAlbum class' do
   before(:context) do
