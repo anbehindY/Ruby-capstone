@@ -1,4 +1,4 @@
-require_relative "item"
+require_relative 'item'
 
 # Genre class
 class Genre
@@ -13,7 +13,7 @@ class Genre
     @items = []
   end
 
-  def add_items(item)
+  def add_item(item)
     @items << item
     item.genre = self
   end

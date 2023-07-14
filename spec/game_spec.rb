@@ -7,7 +7,7 @@ describe 'Testing Game' do
 
   context 'Testing  game instance and Method' do
     it 'Testing Multiplayer instance' do
-      expect(@game.multiplayer).to eq true
+      expect(@game.multiplayer).to be true
     end
 
     it 'Testing Last played Date instance' do
